@@ -30,14 +30,15 @@ const Blog = () =>{
             .then(res => res.json())
             .then(data => {
                 console.log("before check", data)
+                console.log(data?.articles?.length)
                 setIsLoading(false)
-                if(blogData?.articles?.length < 1){
+                if(data?.articles?.length > 1 && data?.articles){
                     console.log("if check", data)
-                    setIsError(true);
-                }else{
-                    console.log("else check", data)
                     setIsError(false);
                     setBlogData(data);
+                }else{
+                    console.log("else check", data)
+                    setIsError(true);
                 }
                 localStorage.setItem("blogData", JSON.stringify(data))
             })
