@@ -1,5 +1,9 @@
 
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
+
+import { mockup } from '../assets/images'
+import { smallMockup } from '../assets/images'
+
 const MockupSection = () =>{
 
     return(
@@ -24,28 +28,14 @@ const MockupSection = () =>{
                 </a>
             </div>
             <div className='hidden mob-landscape:block'>
-                <img src="../src/assets/images/mockup.png" alt="Mockup" />
+                <img src={mockup} alt="Mockup" />
             </div>
             <div className='mob-landscape:hidden'>
-                <img src="../src/assets/images/sm-mockup.png" alt="Mockup" />
+                <img src={smallMockup} alt="Mockup" />
             </div>
         </div>
     )
 }
 
 export default MockupSection
-
-
-
-
-
-
-
-
-
-
-// /* Soft Blue */
-// background: #5468E7;
-
-
 
