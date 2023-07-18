@@ -16,11 +16,12 @@ import image1 from "./absolutes/image1.png"
 import image2 from "./absolutes/image2.png"
 import image3 from "./absolutes/image3.png"
 
-import avator1 from "./avator1.png"
-import avator2 from "./avator2.png"
-import avator3 from "./avator3.png"
-import avator4 from "./avator4.png"
-import avator5 from "./avator5.png"
+
+import avator1 from "./avator/avator1.png"
+import avator2 from "./avator/avator2.png"
+import avator3 from "./avator/avator3.png"
+import avator4 from "./avator/avator4.png"
+import avator5 from "./avator/avator5.png"
 
 export{
     infoImg1,
