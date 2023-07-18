@@ -1,8 +1,10 @@
 
+import { calender, infoImg1 } from "../images"
+
 export const infoSectionData = [
     {   
-        img: "../src/assets/images/info-img1.png", 
-        absImg: ["../src/assets/images/absolutes/Calender.png",],
+        img: infoImg1, 
+        absImg: [calender ],
         id: "info-img1.png",
         title:"Chats for your distributed teams", 
         content:"Team combines the immediacy of real-time chat with an email threading model. With Team, you can catch up on important conversations while ignoring irrelevant ones."
