@@ -14,12 +14,12 @@ export default {
       'body': ['"Open Sans"', ],
      },
     extend: {
-      backgroundImage: theme =>({
-        'hero-img': "url('./src/assets/images/hero-img.png')",
-        'small-hero-img': "url('./src/assets/images/s-hero-img.png')",
-        'md-hero-img': "url('./src/assets/images/m-hero-img.png')",
-        'arrow-right': "url('./src/assets/images/icons/arrow_forward_24px.png')",
-       }),
+      backgroundImage: {
+        'hero-img': "url('../src/assets/images/hero-img.png')",
+        'small-hero-img': "url('../src/assets/images/s-hero-img.png')",
+        'md-hero-img': "url('../src/assets/images/m-hero-img.png')",
+        'arrow-right': "url('../src/assets/images/icons/arrow_forward_24px.png')",
+       },
       dropShadow: {
         'lg': '0px 8px 16px rgba(35, 35, 64, 0.6)',
         'card-shadow': '0px 16px 24px rgba(118, 118, 178, 0.24)',
