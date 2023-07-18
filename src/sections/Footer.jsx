@@ -69,13 +69,13 @@ const Footer = () =>{
                     className="text-softBlue relative"
                     >
                         <input type="email" name="email" id="email" placeholder="Email" 
-                        onChange={e => handleInput(e)} value={value} required
+                        onChange={e => handleInput(e)} value={value} disabled={isDisabled} required
                         className="py-2 pl-4 pr-10 rounded bg-lightGray text-offWhite 
                         placeholder:text-offWhite placeholder:font-lexend-deca placeholder:text-sm
                         placeholder:tracking-wide"/>
-                        <input type="submit" value="" 
-                        className="absolute right-0 top-0 bottom-0 bg-arrow-right bg-no-repeat 
-                          w-8 cursor-pointer z-20 bg-center" />
+                        <input type="submit" value="" disabled={isDisabled}
+                        className={`absolute right-0 top-0 bottom-0 bg-arrow-right bg-no-repeat 
+                          w-8 ${isDisabled? "": "cursor-pointer "} z-20 bg-center bg-lightBlue`} />
                     </form>
                 </div>
             </div>

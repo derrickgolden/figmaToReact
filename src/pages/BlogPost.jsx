@@ -24,7 +24,6 @@ const BlogPost = ({}) =>{
         
         setIsLoading(true)
         fetchData(id).then(res => {
-            console.log(res)
             setIsLoading(false)
             setIsError(false)
             setArticle(res)
