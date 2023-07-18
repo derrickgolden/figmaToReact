@@ -9,6 +9,7 @@ import Loader from "../components/Loader"
 
 import { getDate } from "../assets/calculations/date"
 import { fetchData } from "../assets/fetchData"
+import { darkTeam } from "../assets/images"
 
 const BlogPost = ({}) =>{
     const scrollRef = useRef()
@@ -40,7 +41,7 @@ const BlogPost = ({}) =>{
             <NavMenu 
             text_col={''}
             bg_col={"bg-offWhite"}
-            img_src={"../src/assets/images/dark_team.png"}
+            img_src={darkTeam}
             />
             {
                 isLoading? <Loader /> : isError? <Error /> :

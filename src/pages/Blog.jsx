@@ -1,6 +1,8 @@
 
 import { useEffect, useState, useRef } from "react";
 
+import { darkTeam } from "../assets/images";
+
 import NavMenu from "../components/NavMenu";
 import BlogCard from "../components/BlogCard";
 import Loader from "../components/Loader";
@@ -52,7 +54,7 @@ const Blog = () =>{
             <NavMenu 
             text_col={''}
             bg_col={"bg-offWhite"}
-            img_src={"../src/assets/images/dark_team.png"}
+            img_src={darkTeam}
             />
             <div className="py-20">
                 <h1 className="font-lexend-deca font-bold text-5xl text-darkBlue
