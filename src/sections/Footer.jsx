@@ -1,12 +1,27 @@
 
+import { useState } from "react";
+
 import { footerData } from "../assets/dataInfor/footerData";
 
 import { team } from "../assets/images";
 
 const Footer = () =>{
+    const [ value, setValue] = useState("")
+    const [ showInput, setShowInput] = useState(true);
+    const [ isDisabled, setIsDisabled] = useState(false)
 
+    const handleInput =(e) =>{
+        setValue(e.target.value)
+    }
     const handleEmailSubmit = (e) =>{
-        console.log(e)
+        e.preventDefault()
+
+        setValue("Please Wait...")
+        setIsDisabled(true)
+        setTimeout(() =>{
+            setValue("Subscribed")
+            setShowInput(false)
+        },2000);
     }
 
     return(
@@ -50,15 +65,17 @@ const Footer = () =>{
                     tracking-wide">
                         Subscribe to our newseller.
                     </h3>
-                    <form className="text-softBlue relative"
-                    onSubmit={(e) => handleEmailSubmit(e)}>
-                        <input type="email" name="email" id="email" placeholder="Email" required
-                        className="py-2 px-4 rounded bg-lightGray text-offWhite 
+                    <form onSubmit={(e) => handleEmailSubmit(e)} 
+                    className="text-softBlue relative"
+                    >
+                        <input type="email" name="email" id="email" placeholder="Email" 
+                        onChange={e => handleInput(e)} value={value} required
+                        className="py-2 pl-4 pr-10 rounded bg-lightGray text-offWhite 
                         placeholder:text-offWhite placeholder:font-lexend-deca placeholder:text-sm
                         placeholder:tracking-wide"/>
-                        <input type="submit" value=""
-                        className="absolute right-0 top-[29%] bg-arrow-right bg-no-repeat
-                         h-7 w-8 cursor-pointer" />
+                        <input type="submit" value="" 
+                        className="absolute right-0 top-0 bottom-0 bg-arrow-right bg-no-repeat 
+                          w-8 cursor-pointer z-20 bg-center" />
                     </form>
                 </div>
             </div>
@@ -70,25 +87,6 @@ const Footer = () =>{
 }
 
 export default Footer;
-// /* Email */
-
-// margin: 0 auto;
-// width: 39px;
-// height: 23px;
-
-// /* Caption */
-// font-family: 'Lexend Deca';
-// font-style: normal;
-// font-weight: 400;
-// font-size: 14px;
-// line-height: 160%;
-// /* identical to box height, or 22px */
-// display: flex;
-// align-items: center;
-// letter-spacing: 0.01em;
-
-// /* Off-white */
-// color: #F5F5F5;
 
 
 
