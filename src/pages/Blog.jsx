@@ -29,9 +29,13 @@ const Blog = () =>{
             fetch(req)
             .then(res => res.json())
             .then(data => {
-                setIsError(false)
                 setIsLoading(false)
-                setBlogData(data);
+                if(blogData?.articles?.length < 1){
+                    setIsError(true);
+                }else{
+                    setIsError(false);
+                    setBlogData(data);
+                }
                 localStorage.setItem("blogData", JSON.stringify(data))
             })
         } catch (error) {

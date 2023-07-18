@@ -1,6 +1,7 @@
 
-import { links } from "../assets/dataInfor/link";
 import { footerData } from "../assets/dataInfor/footerData";
+
+import { team } from "../assets/images";
 
 const Footer = () =>{
 
@@ -15,7 +16,7 @@ const Footer = () =>{
                 <div className="w-40">
                     <div className="w-[138px] h-[52px]">
                         <img className="bg-contain "
-                        src="../src/assets/images/team.png" alt="logo" />
+                        src={team} alt="logo" />
                     </div>
                     <p className="font-normal text-sm tracking-wider">
                         Collaboration platform for mordern team 
