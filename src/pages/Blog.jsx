@@ -29,11 +29,13 @@ const Blog = () =>{
             fetch(req)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log("before check", data)
                 setIsLoading(false)
                 if(blogData?.articles?.length < 1){
+                    console.log("if check", data)
                     setIsError(true);
                 }else{
+                    console.log("else check", data)
                     setIsError(false);
                     setBlogData(data);
                 }
