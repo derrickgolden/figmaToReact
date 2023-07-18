@@ -89,7 +89,7 @@ const BlogPost = ({}) =>{
                         {article.content}
                     </div>
                     <div className="flex flex-row items-center justify-center box-border p-10">
-                        <a href={article.url}
+                        <a href={article.url} target="_blank"
                         className="rounded-md py-3 px-0 tablet:p-6 bg-lightBlue text-base
                         text-darkBlue font-normal w-[180px] tablet:w-[300px] text-center">
                             Visit Official Website

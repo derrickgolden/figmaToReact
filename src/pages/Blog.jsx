@@ -1,53 +1,17 @@
 
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 
 import { darkTeam } from "../assets/images";
+import { blogDatas } from "../assets/fetchData";
 
 import NavMenu from "../components/NavMenu";
 import BlogCard from "../components/BlogCard";
-import Loader from "../components/Loader";
-import Error from "../components/Error";
 
 const Blog = () =>{
     const blogRef = useRef()
 
-    const [blogData, setBlogData] = useState({})
+    const [blogData, setBlogData] = useState((blogDatas))
     const [isNext, setIsNext] = useState({start: 0, end: 9})
-    const [isLoading, setIsLoading] = useState(false)
-    const [isError, setIsError] = useState(false)
-
-    useEffect(()=>{
-        var url = 'https://newsapi.org/v2/everything?' +
-                  'q=Apple&' + 'language=en&' +
-                  'from=2023-07-14&' +
-                  'sortBy=popularity&' +
-                  'apiKey=592e3097c035444abc5f2c8f1ad28caf';
-        
-        var req = new Request(url);
-        try {
-            setIsLoading(true);
-            fetch(req)
-            .then(res => res.json())
-            .then(data => {
-                console.log("before check", data)
-                console.log(data?.articles?.length)
-                setIsLoading(false)
-                if(data?.articles?.length > 1 && data?.articles){
-                    console.log("if check", data)
-                    setIsError(false);
-                    setBlogData(data);
-                }else{
-                    console.log("else check", data)
-                    setIsError(true);
-                }
-                localStorage.setItem("blogData", JSON.stringify(data))
-            })
-        } catch (error) {
-            setIsLoading(false)
-            setIsError(true)
-            console.error(error);
-        }   
-    },[])
 
     const handleNextPrev = () =>{
         blogRef.current.scrollIntoView({ behavior: "smooth", })
@@ -75,11 +39,9 @@ const Blog = () =>{
                     and focused.
                 </p>
             </div>
-            {isLoading? <Loader /> : isError? <Error /> : (
-                <>
-                <div ref={blogRef}
+            <div ref={blogRef}
                 className="flex flex-wrap gap-7  justify-between">
-                    {blogData?.articles?.slice(isNext.start, isNext.end)
+                    {blogData?.slice(isNext.start, isNext.end)
                     .map((article, i) =>(
                         <BlogCard 
                         key={i}
@@ -98,9 +60,7 @@ const Blog = () =>{
                             </button>
                         )
                     }
-                </div>
-                </>
-            )} 
+                </div> 
         </div>
     )
 }
