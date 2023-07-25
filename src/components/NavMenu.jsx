@@ -21,11 +21,11 @@ const NavMenu = ({text_col, bg_col, img_src}) =>{
                     src={img_src} alt="logo" />
                 </Link>
             </div>
-            <div className={`${showMenu? `${bg_col} absolute opacity-0 animate-animMenu
-            top-11 z-10 right-0 p-8 rounded drop-shadow-xl ` : "hidden" } 
-            desktop:block`}>
+            <div className={`${bg_col} desktop:bg-transparent  z-10 grid overflow-hidden 
+             ${showMenu? ` absolute top-11 right-0 left-0 grid-rows-1 
+            rounded drop-shadow-xl ` : " grid-rows-[0px] " } desktop:block`}>
                 <ul className="flex flex-col items-start gap-7 desktop:flex-row lg-desktop:gap-14 
-                desktop:items-center p-0 ">
+                desktop:items-center p-8 desktop:p-0">
                     {links.map(link =>(
                         <li key={link.id}
                         className="h-6">

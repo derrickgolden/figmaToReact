@@ -53,6 +53,14 @@ const BlogPost = ({}) =>{
 }
 
  const Post = ({article}) =>{
+    
+    const hanldeIframeEror = (e) =>{
+        console.log("error", e);
+    }
+    const hanldeIframeLoad = (e) =>{
+        console.log("load", e);
+    }
+
     return(
         <div className="mt-28">
                 <div className="flex items-center justify-center pb-12">
@@ -87,6 +95,11 @@ const BlogPost = ({}) =>{
                     text-darkGray">
                         {article.content}
                     </div>
+                    <iframe src={article.url} onLoad={(e) =>{ hanldeIframeLoad(e) }} 
+                        onError={(e) => hanldeIframeEror(e) } 
+                        title="Website In Detail" name="websiteFrame" 
+                        style={{width: "100%", height:"80vh" }}>
+                    </iframe>
                     <div className="flex flex-row items-center justify-center box-border p-10">
                         <a href={article.url} target="_blank"
                         className="rounded-md py-3 px-0 tablet:p-6 bg-lightBlue text-base

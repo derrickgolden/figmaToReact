@@ -13,6 +13,12 @@ export default {
       'lexend-deca': ['"Lexend Deca"', 'sans-serif' ],
       'body': ['"Open Sans"', ],
      },
+     transitionProperty: {
+      'menuGrid': {
+          "transition-property": "grid-template-rows",
+          'transition-duration': '1s' ,
+      },
+    },
     extend: {
       backgroundImage: {
         'hero-img': "url('../src/assets/images/hero-img.png')",
@@ -58,6 +64,7 @@ export default {
       'darkGray': 'rgba(37, 49, 60, 0.9)'
     },
     backgroundColor: theme => ({
+      'transparent': 'transparent',
       'white': '#FFFFFF',
       'darkBlue': '#232340',
       'offWhite': '#F5F5F5',
