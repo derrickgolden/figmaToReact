@@ -35,9 +35,9 @@ const HeroOffer = ({}) =>{
                 { showInput ?
                     <input type="email" placeholder="Email" autoFocus={true} name="email"
                     id="email" required
-                    className="box-border flex flex-row justify-between items-center py-3
-                    px-4 gap-6 w-full mob-landscape:max-w-72 h-12 bg-offWhite border-2 
-                    border-solid border-grayishBlue rounded" /> :
+                    className=" flex flex-row justify-between items-center py-3
+                    px-4 w-full mob-landscape:max-w-72 h-12 bg-offWhite 
+                    rounded outline-1 outline outline-indigo-500" /> :
                     null
                 }
                 <input type='submit' value= {value} disabled ={isDisabled}
